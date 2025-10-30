@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio – Web Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="nav" data-animate="nav">
+      <div class="nav__logo">JD</div>
+      <input type="checkbox" id="nav-toggle" class="nav__toggle" />
+      <label for="nav-toggle" class="nav__burger" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </label>
+      <nav class="nav__links">
+        <a href="#hero">Accueil</a>
+        <a href="#projects">Projets</a>
+        <a href="#passions">Passions</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="hero" data-animate="hero">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Développeur web freelance</p>
+          <h1>
+            J’imagine des expériences numériques <span class="hero__highlight">vivantes</span>
+          </h1>
+          <p class="hero__text">
+            Spécialisé en interfaces immersives et micro-interactions, j’accompagne les
+            marques ambitieuses vers des expériences capables de séduire le jury d’Awwwards.
+          </p>
+          <div class="hero__cta">
+            <a href="#projects" class="btn btn--primary">Voir mes réalisations</a>
+            <a href="#contact" class="btn btn--ghost">Collaborons</a>
+          </div>
+        </div>
+        <div class="hero__preview">
+          <div class="preview-card" data-parallax>
+            <span class="preview-card__tag">UX • UI • WebGL</span>
+            <h2>Expériences sur-mesure</h2>
+            <p>
+              Animation fluide, storytelling interactif et optimisation SEO pour un impact
+              durable.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid-highlight" data-animate="metrics">
+        <article>
+          <h3>+45</h3>
+          <p>interfaces animées récompensées</p>
+        </article>
+        <article>
+          <h3>12</h3>
+          <p>marques propulsées à l’international</p>
+        </article>
+        <article>
+          <h3>97%</h3>
+          <p>de clients qui me recommandent</p>
+        </article>
+        <article>
+          <h3>4.9/5</h3>
+          <p>de satisfaction moyenne</p>
+        </article>
+      </section>
+
+      <section class="projects" id="projects">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Projets sélectionnés</span>
+          <h2>Des expériences qui marquent</h2>
+          <p>
+            Chaque projet est une immersion entre technologie et émotion, pensé pour générer
+            de l’engagement et remporter des prix.
+          </p>
+        </header>
+        <div class="projects__list">
+          <article class="project-card" data-tilt>
+            <div class="project-card__media project-card__media--atlas"></div>
+            <div class="project-card__content">
+              <h3>Atlas Expedition</h3>
+              <p>
+                Plateforme immersive sur la biodiversité avec WebGL, narration scrollée et
+                scoring Awwwards Honorable Mention.
+              </p>
+              <a href="#" class="project-card__link">Étude de cas</a>
+            </div>
+          </article>
+          <article class="project-card" data-tilt>
+            <div class="project-card__media project-card__media--lumen"></div>
+            <div class="project-card__content">
+              <h3>Lumen Studio</h3>
+              <p>
+                Site vitrine pour un studio lumière, intégration GSAP avancée, transitions 3D
+                et optimisation Core Web Vitals.
+              </p>
+              <a href="#" class="project-card__link">Étude de cas</a>
+            </div>
+          </article>
+          <article class="project-card" data-tilt>
+            <div class="project-card__media project-card__media--terroir"></div>
+            <div class="project-card__content">
+              <h3>Terroir Nouveau</h3>
+              <p>
+                Expérience ecommerce premium avec micro-interactions et storytelling sonore,
+                finaliste Awwwards Site of the Day.
+              </p>
+              <a href="#" class="project-card__link">Étude de cas</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="passions" id="passions">
+        <div class="passions__media" data-animate="passions"></div>
+        <div class="passions__content">
+          <span class="section-header__eyebrow">Passions</span>
+          <h2>Créativité, technologie &amp; nature</h2>
+          <p>
+            Je puise mon inspiration dans la photographie outdoor, le design génératif et la
+            musique électronique. Ces univers nourrissent ma vision pour créer des interfaces
+            sensibles et performantes.
+          </p>
+          <ul class="passions__list">
+            <li><strong>Design génératif :</strong> prototypes interactifs en WebGL.</li>
+            <li><strong>Photographie :</strong> composition et lumière au service du storytelling.</li>
+            <li><strong>Musique :</strong> mix live et sound design immersif.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="process" data-animate="process">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Process</span>
+          <h2>Une méthodologie centrée sur l’impact</h2>
+          <p>
+            De l’idéation à la livraison, chaque étape est conçue pour maximiser la performance
+            et l’émotion.
+          </p>
+        </header>
+        <div class="process__steps">
+          <article>
+            <h3>01. Immersion</h3>
+            <p>Audit UX, recherche utilisateur et définition du ton émotionnel.</p>
+          </article>
+          <article>
+            <h3>02. Design narratif</h3>
+            <p>Wireframes, prototypage animé et direction artistique.</p>
+          </article>
+          <article>
+            <h3>03. Production</h3>
+            <p>Développement sur-mesure avec GSAP, Three.js et Web Audio API.</p>
+          </article>
+          <article>
+            <h3>04. Optimisation</h3>
+            <p>Testing multi-device, performance et SEO technique.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" data-animate="contact">
+        <div class="contact__content">
+          <span class="section-header__eyebrow">Contact</span>
+          <h2>Prêt à concevoir l’expérience de demain ?</h2>
+          <p>
+            Racontez-moi votre projet ou votre défi. Je reviens vers vous en 24h avec des
+            pistes créatives.
+          </p>
+          <a href="mailto:bonjour@julien.dev" class="btn btn--primary">bonjour@julien.dev</a>
+          <div class="contact__socials">
+            <a href="#" aria-label="Dribbble">Dribbble</a>
+            <a href="#" aria-label="Behance">Behance</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          </div>
+        </div>
+        <form class="contact__form">
+          <label>
+            <span>Nom</span>
+            <input type="text" name="name" placeholder="Votre nom" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="Votre email" required />
+          </label>
+          <label>
+            <span>Projet</span>
+            <textarea name="message" rows="4" placeholder="Parlez-moi de votre idée" required></textarea>
+          </label>
+          <button type="submit" class="btn btn--ghost">Envoyer</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Julien Dupont — Portfolio Web Developer</p>
+      <a href="#hero">Retour en haut</a>
+    </footer>
+  </body>
+</html>

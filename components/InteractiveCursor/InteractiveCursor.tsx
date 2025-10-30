@@ -9,6 +9,7 @@ export default function InteractiveCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const auraRef = useRef<HTMLDivElement>(null);
   const [isEnabled, setIsEnabled] = useState(false);
+  const [position, setCursorPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     if (typeof window === 'undefined') {
@@ -47,18 +48,9 @@ export default function InteractiveCursor() {
 
     document.body.dataset.customCursor = 'true';
 
-    setPosition(cursor, window.innerWidth / 2, window.innerHeight / 2);
-    setPosition(aura, window.innerWidth / 2, window.innerHeight / 2);
-
-    const setPosition = (element: HTMLElement, x: number, y: number) => {
-      element.style.setProperty('--cursor-x', `${x}px`);
-      element.style.setProperty('--cursor-y', `${y}px`);
-    };
-
     const updatePosition = (event: PointerEvent) => {
       const { clientX, clientY } = event;
-      setPosition(cursor, clientX, clientY);
-      setPosition(aura, clientX, clientY);
+      setCursorPosition({ x: clientX, y: clientY });
     };
 
     const setState = (state: string, active: boolean) => {
@@ -102,6 +94,8 @@ export default function InteractiveCursor() {
     document.addEventListener('pointerdown', handlePointerDown);
     document.addEventListener('pointerup', handlePointerUp);
 
+    setCursorPosition({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
+
     const interactiveElements = Array.from(
       document.querySelectorAll<HTMLElement>(INTERACTIVE_SELECTORS),
     );
@@ -131,6 +125,24 @@ export default function InteractiveCursor() {
       });
     };
   }, [isEnabled]);
+
+  useEffect(() => {
+    if (!isEnabled) {
+      return;
+    }
+
+    const cursor = cursorRef.current;
+    const aura = auraRef.current;
+
+    if (!cursor || !aura) {
+      return;
+    }
+
+    cursor.style.setProperty('--cursor-x', `${position.x}px`);
+    cursor.style.setProperty('--cursor-y', `${position.y}px`);
+    aura.style.setProperty('--cursor-x', `${position.x}px`);
+    aura.style.setProperty('--cursor-y', `${position.y}px`);
+  }, [isEnabled, position]);
 
   if (!isEnabled) {
     return null;

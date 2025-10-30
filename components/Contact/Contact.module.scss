@@ -4,9 +4,9 @@
   gap: clamp(2rem, 5vw, 3rem);
   padding: clamp(2rem, 5vw, 3rem);
   border-radius: var(--radius-xl);
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(245, 233, 252, 0.85));
-  border: 1px solid rgba(190, 150, 224, 0.24);
-  box-shadow: 0 26px 60px rgba(137, 90, 173, 0.12);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.97), rgba(244, 242, 255, 0.88));
+  border: 1px solid rgba(188, 172, 232, 0.22);
+  box-shadow: 0 22px 48px rgba(58, 40, 95, 0.12);
 }
 
 .content {
@@ -39,9 +39,9 @@
   width: fit-content;
   padding: 0.75rem 1.5rem;
   border-radius: 999px;
-  background: rgba(214, 156, 227, 0.18);
-  border: 1px solid rgba(190, 150, 224, 0.32);
-  color: var(--color-text);
+  background: rgba(199, 186, 255, 0.2);
+  border: 1px solid rgba(188, 172, 232, 0.32);
+  color: rgba(41, 29, 58, 0.85);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -50,8 +50,8 @@
 
 .mailLink:hover,
 .mailLink:focus {
-  background: rgba(214, 156, 227, 0.28);
-  transform: translateY(-2px);
+  background: rgba(189, 175, 255, 0.3);
+  transform: translateY(-3px);
 }
 
 .socials {
@@ -94,8 +94,8 @@
 .textarea {
   padding: 0.9rem 1.1rem;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(190, 150, 224, 0.25);
-  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(188, 172, 232, 0.24);
+  background: rgba(255, 255, 255, 0.85);
   color: var(--color-text);
   font-size: 0.95rem;
   transition: border var(--transition-base), background var(--transition-base), box-shadow var(--transition-base);
@@ -105,7 +105,7 @@
 .textarea:focus {
   border-color: var(--color-accent);
   background: rgba(255, 255, 255, 1);
-  box-shadow: 0 0 0 4px rgba(214, 156, 227, 0.15);
+  box-shadow: 0 0 0 4px rgba(181, 162, 255, 0.18);
   outline: none;
 }
 
@@ -113,9 +113,9 @@
   justify-self: start;
   padding: 0.85rem 1.9rem;
   border-radius: 999px;
-  border: 1px solid rgba(190, 150, 224, 0.32);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(214, 156, 227, 0.28));
-  color: var(--color-text);
+  border: 1px solid rgba(188, 172, 232, 0.32);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(197, 179, 255, 0.3));
+  color: rgba(41, 29, 58, 0.88);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -124,9 +124,9 @@
 
 .submit:hover,
 .submit:focus {
-  background: linear-gradient(135deg, var(--color-accent), rgba(255, 214, 255, 0.85));
-  color: #3a1f4b;
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(197, 179, 255, 0.92), rgba(240, 235, 255, 0.92));
+  color: #35285b;
+  transform: translateY(-3px);
 }
 
 @media (max-width: 768px) {

@@ -37,13 +37,19 @@ export default function Projects() {
       </header>
       <div className={styles.list}>
         {projects.map((project) => (
-          <article key={project.title} className={styles.card} data-tilt tabIndex={0}>
+          <article
+            key={project.title}
+            className={styles.card}
+            data-tilt
+            tabIndex={0}
+            data-cursor="accent"
+          >
             <div className={styles.glare} data-glare aria-hidden="true" />
             <div className={styles.cardMedia} />
             <div className={styles.cardBody}>
               <h3 className={styles.cardTitle}>{project.title}</h3>
               <p className={styles.cardText}>{project.description}</p>
-              <a href={project.link} className={styles.cardLink}>
+              <a href={project.link} className={styles.cardLink} data-cursor>
                 {project.linkLabel}
               </a>
             </div>

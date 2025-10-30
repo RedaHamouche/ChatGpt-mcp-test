@@ -13,16 +13,16 @@ export default function Hero() {
           ambitieuses vers des expériences capables de séduire le jury d’Awwwards.
         </p>
         <div className={`${styles.heroActions} hero-actions`}>
-          <a href="#projects" className={styles.buttonPrimary}>
+          <a href="#projects" className={styles.buttonPrimary} data-cursor="accent">
             Voir mes réalisations
           </a>
-          <a href="#contact" className={styles.buttonGhost}>
+          <a href="#contact" className={styles.buttonGhost} data-cursor>
             Collaborons
           </a>
         </div>
       </div>
       <div className={styles.heroPreview}>
-        <article className={styles.previewCard} data-parallax>
+        <article className={styles.previewCard} data-parallax data-cursor="accent">
           <span className={styles.previewTag}>UX • UI • WebGL</span>
           <h2 className={styles.previewTitle}>Expériences sur-mesure</h2>
           <p className={styles.previewText}>

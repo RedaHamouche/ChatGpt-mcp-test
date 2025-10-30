@@ -19,13 +19,16 @@ export default function Nav() {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.brand}>JD</div>
+      <div className={styles.brand} data-cursor>
+        JD
+      </div>
       <button
         type="button"
         className={styles.menuButton}
         onClick={toggleMenu}
         aria-expanded={isOpen}
         aria-controls="nav-links"
+        data-cursor
       >
         ☰
       </button>
@@ -36,7 +39,13 @@ export default function Nav() {
       >
         {links.map((link) => (
           <li key={link.href}>
-            <a href={link.href} className={styles.navLink} data-nav-link onClick={closeMenu}>
+            <a
+              href={link.href}
+              className={styles.navLink}
+              data-nav-link
+              data-cursor
+              onClick={closeMenu}
+            >
               {link.label}
             </a>
           </li>

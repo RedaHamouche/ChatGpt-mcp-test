@@ -23,27 +23,27 @@ export function useLuxuryInteractions() {
       context = gsap.context(() => {
         const intro = gsap.timeline({
           defaults: {
-            duration: 0.9,
-            ease: 'power3.out',
-            stagger: 0.12,
+            duration: 0.6,
+            ease: 'power2.out',
+            stagger: 0.08,
           },
         });
 
         intro
           .from('[data-animate="nav"]', { y: -40, opacity: 0 })
-          .from('[data-animate="hero"] .hero-eyebrow', { y: 50, opacity: 0 }, '-=0.45')
+          .from('[data-animate="hero"] .hero-eyebrow', { y: 35, opacity: 0 }, '-=0.35')
           .from('[data-animate="hero"] h1 span, [data-animate="hero"] h1', {
-            y: 60,
+            y: 36,
             opacity: 0,
-            duration: 1,
+            duration: 0.7,
           })
-          .from('[data-animate="hero"] .hero-text', { y: 40, opacity: 0 })
-          .from('[data-animate="hero"] .hero-actions', { y: 30, opacity: 0 }, '-=0.3')
+          .from('[data-animate="hero"] .hero-text', { y: 28, opacity: 0 })
+          .from('[data-animate="hero"] .hero-actions', { y: 24, opacity: 0 }, '-=0.25')
           .from('[data-animate="hero"] [data-parallax]', {
-            y: 80,
+            y: 48,
             opacity: 0,
-            scale: 0.95,
-            duration: 1,
+            scale: 0.97,
+            duration: 0.65,
           });
 
         const sections: Array<{ selector: string; offset: string }> = [
@@ -61,11 +61,11 @@ export function useLuxuryInteractions() {
               start: offset,
               toggleActions: 'play none none reverse',
             },
-            y: 40,
+            y: 28,
             opacity: 0,
-            duration: 0.9,
-            ease: 'power3.out',
-            stagger: 0.18,
+            duration: 0.65,
+            ease: 'power2.out',
+            stagger: 0.12,
           });
         });
 

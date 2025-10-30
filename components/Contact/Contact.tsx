@@ -9,17 +9,17 @@ export default function Contact() {
         <p className={styles.text}>
           Racontez-moi votre projet ou votre défi. Je reviens vers vous en 24h avec des pistes créatives.
         </p>
-        <a href="mailto:bonjour@julien.dev" className={styles.mailLink}>
+        <a href="mailto:bonjour@julien.dev" className={styles.mailLink} data-cursor="accent">
           bonjour@julien.dev
         </a>
         <div className={styles.socials}>
-          <a href="#" aria-label="Dribbble">
+          <a href="#" aria-label="Dribbble" data-cursor>
             Dribbble
           </a>
-          <a href="#" aria-label="Behance">
+          <a href="#" aria-label="Behance" data-cursor>
             Behance
           </a>
-          <a href="#" aria-label="LinkedIn">
+          <a href="#" aria-label="LinkedIn" data-cursor>
             LinkedIn
           </a>
         </div>
@@ -43,7 +43,7 @@ export default function Contact() {
             required
           />
         </label>
-        <button type="submit" className={styles.submit}>
+        <button type="submit" className={styles.submit} data-cursor="accent">
           Envoyer
         </button>
       </form>

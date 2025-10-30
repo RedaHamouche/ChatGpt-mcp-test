@@ -8,6 +8,7 @@ import Nav from '@/components/Nav/Nav';
 import Passions from '@/components/Passions/Passions';
 import Process from '@/components/Process/Process';
 import Projects from '@/components/Projects/Projects';
+import InteractiveCursor from '@/components/InteractiveCursor/InteractiveCursor';
 import styles from './HomePage.module.scss';
 import { useLuxuryInteractions } from './useLuxuryInteractions';
 
@@ -18,6 +19,7 @@ export default function HomePage() {
 
   return (
     <div className={styles.page}>
+      <InteractiveCursor />
       <div className={styles.navPlaceholder} data-animate="nav">
         <Nav />
       </div>

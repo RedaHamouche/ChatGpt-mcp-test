@@ -1,20 +1,20 @@
 :root {
   color-scheme: light;
-  --color-background: #fdfaff;
-  --color-surface: rgba(255, 255, 255, 0.86);
-  --color-surface-alt: rgba(247, 239, 253, 0.94);
-  --color-border: rgba(190, 150, 224, 0.28);
-  --color-text: #2d1b3d;
-  --color-text-muted: rgba(45, 27, 61, 0.64);
-  --color-accent: #d69ce3;
-  --color-accent-soft: rgba(214, 156, 227, 0.2);
-  --gradient-faint: radial-gradient(circle at top right, rgba(214, 156, 227, 0.35), transparent 60%);
+  --color-background: #faf7ff;
+  --color-surface: rgba(255, 255, 255, 0.92);
+  --color-surface-alt: rgba(248, 244, 255, 0.88);
+  --color-border: rgba(183, 163, 221, 0.24);
+  --color-text: #291d3a;
+  --color-text-muted: rgba(41, 29, 58, 0.6);
+  --color-accent: #c5b3ff;
+  --color-accent-soft: rgba(197, 179, 255, 0.18);
+  --gradient-faint: radial-gradient(circle at top right, rgba(197, 179, 255, 0.26), transparent 60%);
   --max-width: 1180px;
   --radius-xl: 36px;
   --radius-lg: 28px;
   --radius-md: 18px;
-  --shadow-elevated: 0 24px 70px rgba(92, 49, 116, 0.15);
-  --transition-base: 0.35s ease;
+  --shadow-elevated: 0 18px 55px rgba(61, 39, 97, 0.12);
+  --transition-base: 0.28s ease;
 }
 
 *,
@@ -36,6 +36,16 @@ body {
   color: var(--color-text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+body[data-custom-cursor='true'] {
+  cursor: none;
+}
+
+@media (pointer: coarse) {
+  body[data-custom-cursor='true'] {
+    cursor: auto;
+  }
 }
 
 a {

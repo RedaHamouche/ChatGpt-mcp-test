@@ -5,9 +5,9 @@
   align-items: center;
   padding: clamp(2rem, 5vw, 3.5rem);
   border-radius: var(--radius-xl);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(246, 234, 253, 0.85));
-  border: 1px solid rgba(190, 150, 224, 0.22);
-  box-shadow: 0 28px 60px rgba(137, 90, 173, 0.15);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(244, 241, 255, 0.88));
+  border: 1px solid rgba(188, 172, 232, 0.2);
+  box-shadow: 0 20px 44px rgba(58, 40, 95, 0.12);
   position: relative;
   overflow: hidden;
 }
@@ -16,8 +16,8 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(214, 156, 227, 0.3), transparent 65%);
-  opacity: 0.9;
+  background: radial-gradient(circle at 20% 20%, rgba(188, 172, 232, 0.26), transparent 65%);
+  opacity: 0.75;
   pointer-events: none;
 }
 
@@ -36,7 +36,21 @@
 }
 
 .heroTitle span {
-  color: var(--color-accent);
+  color: rgba(109, 84, 204, 0.82);
+  position: relative;
+  z-index: 0;
+}
+
+.heroTitle span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0.15em;
+  width: 100%;
+  height: 0.35em;
+  background: linear-gradient(90deg, rgba(197, 179, 255, 0.3), rgba(197, 179, 255, 0));
+  border-radius: 999px;
+  z-index: -1;
 }
 
 .heroEyebrow {
@@ -70,31 +84,51 @@
   text-transform: uppercase;
   font-size: 0.85rem;
   border: 1px solid transparent;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease,
+    color 0.28s ease;
 }
 
 .buttonPrimary {
-  background: linear-gradient(135deg, var(--color-accent), rgba(255, 214, 255, 0.9));
-  color: #3a1f4b;
-  box-shadow: 0 20px 45px rgba(182, 118, 207, 0.35);
+  background: linear-gradient(135deg, rgba(197, 179, 255, 0.95), rgba(240, 235, 255, 0.9));
+  color: #35285b;
+  box-shadow: 0 16px 34px rgba(88, 68, 140, 0.18);
 }
 
 .buttonPrimary:hover,
 .buttonPrimary:focus {
   transform: translateY(-2px);
-  box-shadow: 0 28px 55px rgba(182, 118, 207, 0.42);
+  box-shadow: 0 20px 40px rgba(74, 54, 122, 0.18);
 }
 
 .buttonGhost {
-  border-color: rgba(190, 150, 224, 0.35);
-  background: transparent;
-  color: var(--color-text);
+  border-color: rgba(188, 172, 232, 0.32);
+  background: rgba(255, 255, 255, 0.6);
+  color: rgba(41, 29, 58, 0.84);
 }
 
 .buttonGhost:hover,
 .buttonGhost:focus {
-  background: rgba(214, 156, 227, 0.18);
+  background: rgba(200, 188, 255, 0.22);
   transform: translateY(-2px);
+}
+
+.buttonPrimary::after,
+.buttonGhost::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.65), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.buttonPrimary:hover::after,
+.buttonPrimary:focus::after,
+.buttonGhost:hover::after,
+.buttonGhost:focus::after {
+  opacity: 1;
 }
 
 .heroPreview {
@@ -108,18 +142,20 @@
   width: min(100%, 360px);
   padding: 2.5rem 2rem;
   border-radius: var(--radius-lg);
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(244, 230, 252, 0.85));
-  border: 1px solid rgba(190, 150, 224, 0.22);
-  box-shadow: 0 25px 50px rgba(137, 90, 173, 0.16);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(243, 239, 255, 0.85));
+  border: 1px solid rgba(188, 172, 232, 0.22);
+  box-shadow: 0 22px 44px rgba(58, 40, 95, 0.12);
   transform-style: preserve-3d;
+  animation: cardFloat 11s ease-in-out infinite;
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
 }
 
 .previewTag {
   display: inline-block;
   padding: 0.35rem 1rem;
   border-radius: 999px;
-  background: rgba(214, 156, 227, 0.16);
-  color: var(--color-text);
+  background: rgba(199, 186, 255, 0.18);
+  color: rgba(41, 29, 58, 0.76);
   font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -134,6 +170,27 @@
 .previewText {
   color: var(--color-text-muted);
   font-size: 0.95rem;
+}
+
+.previewCard:hover {
+  box-shadow: 0 28px 52px rgba(58, 40, 95, 0.16);
+  transform: translateY(-6px);
+}
+
+@keyframes cardFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .previewCard {
+    animation: none;
+  }
 }
 
 @media (max-width: 768px) {

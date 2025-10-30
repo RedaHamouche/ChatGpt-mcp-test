@@ -19,18 +19,19 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0), rgba(61, 32, 89, 0.65));
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0), rgba(61, 32, 89, 0.5));
 }
 
 .content {
   padding: clamp(2rem, 5vw, 2.5rem);
   border-radius: var(--radius-lg);
-  background: linear-gradient(140deg, rgba(255, 255, 255, 0.96), rgba(245, 233, 252, 0.85));
-  border: 1px solid rgba(190, 150, 224, 0.24);
-  box-shadow: 0 22px 48px rgba(137, 90, 173, 0.14);
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.97), rgba(244, 242, 255, 0.86));
+  border: 1px solid rgba(188, 172, 232, 0.2);
+  box-shadow: 0 18px 40px rgba(58, 40, 95, 0.1);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .eyebrow {
@@ -59,10 +60,15 @@
 .listItem {
   color: var(--color-text-muted);
   font-size: 0.95rem;
-}
+  }
 
 .listItem strong {
   color: var(--color-text);
+}
+
+.content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 46px rgba(58, 40, 95, 0.14);
 }
 
 @media (max-width: 768px) {

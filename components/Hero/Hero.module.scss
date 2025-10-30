@@ -1,0 +1,147 @@
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(2.5rem, 5vw, 4rem);
+  align-items: center;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(198, 161, 91, 0.15), transparent 60%);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 1;
+}
+
+.heroTitle {
+  font-size: clamp(2.6rem, 6vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.heroTitle span {
+  color: var(--color-accent);
+}
+
+.heroEyebrow {
+  font-size: 0.95rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.heroText {
+  max-width: 32rem;
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.buttonPrimary,
+.buttonGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.9rem 1.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  border: 1px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.buttonPrimary {
+  background: linear-gradient(135deg, var(--color-accent), rgba(198, 161, 91, 0.75));
+  color: #050505;
+  box-shadow: 0 20px 40px rgba(198, 161, 91, 0.4);
+}
+
+.buttonPrimary:hover,
+.buttonPrimary:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 25px 45px rgba(198, 161, 91, 0.45);
+}
+
+.buttonGhost {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-text);
+}
+
+.buttonGhost:hover,
+.buttonGhost:focus {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.heroPreview {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.previewCard {
+  width: min(100%, 360px);
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: var(--shadow-elevated);
+  transform-style: preserve-3d;
+}
+
+.previewTag {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-text);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.previewTitle {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.previewText {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

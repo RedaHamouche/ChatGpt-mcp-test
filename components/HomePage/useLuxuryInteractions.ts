@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 export function useLuxuryInteractions() {
   useEffect(() => {
     let isCancelled = false;
-    let context: import('gsap').GSAPContext | undefined;
+    let context: { revert(): void } | undefined;
     const removeListeners: Array<() => void> = [];
 
     async function init() {
